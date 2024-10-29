@@ -79,7 +79,7 @@ function extractProductDetails($, url) {
 	const priceNum = parsePrice(price);
 	const currency = price.split(' ')[0];
 
-	const fullPriceText = $('upyPrezzoScontato').text().trim();
+	const fullPriceText = $('.upyPrezzoScontato').text().trim();
 	const fullPrice = fullPriceText ? parsePrice(fullPriceText) : priceNum;
 	const discountedPriceText = $('.upyPrezzoFinale').text().trim();
 	const discountedPrice = discountedPriceText
@@ -115,4 +115,4 @@ async function scrapeAllProducts(urls) {
 	}
 }
 
-scrapeAllProducts(urls);
+await scrapeAllProducts(urls);
